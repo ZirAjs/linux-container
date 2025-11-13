@@ -1,0 +1,24 @@
+#!/bin/sh
+SCRIPT_DIR="$(dirname "$0")"
+version=$1
+
+if [ -z "$version" ]; then
+  echo "Usage: $0 <version> <args>"
+  exit 1
+fi
+
+shift
+
+if [ "$version" = "18.04" ]; then
+  cd "$SCRIPT_DIR/18.04" || { echo "Failed to change directory"; exit 1; }
+  exec "./vm" "$@"
+elif [ "$version" = "20.04" ]; then
+  cd "$SCRIPT_DIR/20.04" || { echo "Failed to change directory"; exit 1; }
+  exec "./vm" "$@"
+elif [ "$version" = "22.04" ]; then
+  cd "$SCRIPT_DIR/22.04" || { echo "Failed to change directory"; exit 1; }
+  exec "./vm" "$@"
+else
+  echo "Unsupported version: $version"
+  exit 1
+fi  
