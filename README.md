@@ -46,7 +46,8 @@ Additionally:
 
     * Use the ELF and Dockerfile provided in the challenge, or
     * Use `gdbserver` to eliminate differences.
-* On **Ubuntu 18.04**, some packages had to be removed due to incompatibility issues.
+    * Attach gdb to the provided docker image directly.
+* On **Ubuntu 18.04**, some packages had to be removed due to compatibility issues.
 
 
 ## Directory Layout
